@@ -1,30 +1,58 @@
-import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
-      {/* Hero Section */}
-      <section className="gradient-hero min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#ffffff33_1px,transparent_1px)] [background-size:20px_20px]"></div>
-        <div className="text-center z-10 px-6">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-7xl font-bold mb-6"
-          >
-            Hi, I'm Salman
-          </motion.h1>
-          <p className="text-2xl mb-8">Building the future with AI & Code</p>
-          <button className="px-8 py-4 bg-white text-black rounded-full font-medium hover:scale-105 transition">
-            Explore My Work
-          </button>
+      {/* Hero */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-black to-blue-900"></div>
+        <div className="relative z-10 text-center px-6">
+          <div className="mb-8">
+            <Image src="/profile.jpg" alt="Salman Raza" width={300} height={300} className="rounded-full mx-auto border-4 border-white/30" />
+          </div>
+          <h1 className="text-7xl font-bold mb-4">Salman Raza</h1>
+          <p className="text-3xl mb-8">AI Engineer & Architect | UI/UX Designer | Full Stack Developer</p>
+          <div className="flex gap-4 justify-center">
+            <a href="#projects" className="px-8 py-3 bg-white text-black rounded-full font-semibold">View Projects</a>
+            <a href="#contact" className="px-8 py-3 border border-white rounded-full font-semibold">Get In Touch</a>
+          </div>
         </div>
       </section>
 
-      {/* More sections coming: Skills, Projects, Contact */}
-      <section className="py-20 text-center">
-        <h2 className="text-5xl font-bold mb-8">Skills & Tools</h2>
-        <p>Next.js • Tailwind • Supabase • Vercel • Figma • Canva • Hugging Face</p>
+      {/* Skills Section */}
+      <section id="skills" className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl font-bold text-center mb-16">Skills</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {/* Add skills from Skills.png + Icons.png */}
+            <div className="bg-zinc-900 p-8 rounded-3xl text-center">
+              <div className="text-6xl mb-4">🤖</div>
+              <h3 className="text-2xl font-semibold">AI Engineering</h3>
+            </div>
+            {/* More cards */}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="py-20 bg-zinc-950 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl font-bold text-center mb-16">Featured Projects</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Project cards from Figma */}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-5xl font-bold text-center mb-16">Contact Me</h2>
+          {/* Supabase form placeholder */}
+          <form className="space-y-6">
+            {/* Fields */}
+          </form>
+        </div>
       </section>
     </main>
   );
